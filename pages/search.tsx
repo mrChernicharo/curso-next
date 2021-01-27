@@ -1,7 +1,9 @@
+import { Title } from "../styles/pages/Home";
+
 export default function Search() {
   return (
     <div>
-      <h1>Search</h1>
+      <Title>Search</Title>
     </div>
   );
 }
