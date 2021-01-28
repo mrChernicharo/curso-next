@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next";
 import { useEffect, useState } from "react";
 import { Title } from "../styles/pages/Home";
+import CountButton from "./components/sumButton";
 
 interface IProduct {
   id: string;
@@ -13,6 +14,11 @@ interface HomeProps {
 }
 
 export default function Home({ recommendedProducts }: HomeProps) {
+  const [count, setCount] = useState(0);
+  // const [dots, setDots] = useState([])
+
+  const sum = () => setCount(count + 1);
+
   return (
     <div>
       <Title>Hello world</Title>
@@ -25,6 +31,12 @@ export default function Home({ recommendedProducts }: HomeProps) {
             </li>
           ))}
         </ul>
+      </section>
+      <section>
+        <br />
+        <h1>{count}</h1>
+        <br />
+        <CountButton action={sum} number={count} />
       </section>
     </div>
   );
